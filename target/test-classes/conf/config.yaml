@@ -1,0 +1,74 @@
+#AppDynamics user account information for the SAAS customer. Format is <appdynamics-username>@<appdynamics-account-name>
+userAccount: "apiuser@customer1"
+
+#AppDynamics password for SAAS customer
+password: "password"
+
+#AppDynamics host for SAAS customer
+saasHost: "controller41:8090"
+
+#scheme used for REST AppD call (http/https)
+protocol: "http"
+
+applicationsUrlPath: "/controller/rest/applications"
+
+healthRuleViolationsUrlPath: "/controller/rest/applications/<#APP_ID#>/problems/healthrule-violations?time-range-type=BEFORE_NOW&duration-in-mins=<#POLLING_FREQ_IN_MINS#>&output=XML"
+
+eventsUrlPath: "/controller/rest/applications/<#APP_ID#>/events?time-range-type=BEFORE_NOW&duration-in-mins=<#POLLING_FREQ_IN_MINS#>&event-types=APPLICATION_ERROR,DIAGNOSTIC_SESSION&severities=ERROR&output=XML"
+
+metricsUrlPath: "/rest/applications/<#APP_ID#>/metric-data?metric-path=<#METRIC_PATH#>&time-range-type=BEFORE_NOW&duration-in-mins=<#POLLING_FREQ_IN_MINS#>"
+
+metrics:
+    - "Overall Application Performance|Average End to End Latency (ms)"
+    - "Overall Application Performance|Average Response Time (ms)"
+    - "Overall Application Performance|Calls per Minute"
+
+# Interval in mins to pull the events from REST api.
+durationInMins: 1
+
+#http timeouts in sec
+connectTimeout: 10
+socketTimeout: 10
+
+#StatusIO config for the customer
+statusioConfig:
+
+   #Status io status page ID
+   host: "private-anon-2f3c8afb5-statusio.apiary-proxy.com"
+
+   #Status io status page ID
+   statusPageID: "559f07dce800baa447000bf0"
+
+   #API ID
+   appID: "791602da-a50a-4a51-99aa-35d6746113ab"
+
+   #API Key
+   apiKey: "zhsp+hWfviDr3meL6IZ6DzqxkbHBKnz2pg0EPoCUxVhlZcoxi9m+amEdx7ZeGrzWu5JIFNBtLULLvkKDUtj1XQ=="
+
+   #scheme used (http/https)
+   protocol: "https"
+
+   #Status.io url path
+   incidentPath: "/v2/incident/create"
+
+   #Status.io component
+   component: 
+          - "54cb0c2ec0dc02de290003b2"
+       
+   #Status.io container
+   container:
+           - "54bed336e0354e38560000b6"
+   
+   #http timeouts in sec
+   connectTimeout: 10
+   socketTimeout: 10
+
+   #show appdynamics details in Status.io alert
+   showDetails: true
+   
+   #metric mapping
+   metricMapping:
+       - "55a927ffd0ef560d6e0006dc"
+       - "55a927e5a93df68d71000133"
+       - "55a927c7d0ef560d6e0006db"
+

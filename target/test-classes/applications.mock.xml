@@ -1,0 +1,22 @@
+<applications>
+    <application>
+        <id>1437</id>
+        <name>perf.adpkms</name>
+    </application>
+    <application>
+        <id>1706</id>
+        <name>perf.adppmleads</name>
+    </application>
+    <application>
+        <id>1581</id>
+        <name>perf.crm</name>
+    </application>
+    <application>
+        <id>1453</id>
+        <name>perf.dms</name>
+    </application>
+    <application>
+        <id>1459</id>
+        <name>perf.wd</name>
+    </application>
+</applications>

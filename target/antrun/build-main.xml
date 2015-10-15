@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <mkdir dir="/Users/pedro.pacheco/Projects/statusio-saas-alert-extension-master/target/statusio-saas-alert-extension"/>
+  <copy todir="/Users/pedro.pacheco/Projects/statusio-saas-alert-extension-master/target/statusio-saas-alert-extension">
+    <fileset dir="src/main/resources/conf" includes="monitor.xml"/>
+    <fileset dir="src/main/resources/conf" includes="config.yaml"/>
+  </copy>
+  <copy todir="/Users/pedro.pacheco/Projects/statusio-saas-alert-extension-master/target/statusio-saas-alert-extension">
+    <fileset dir="/Users/pedro.pacheco/Projects/statusio-saas-alert-extension-master/target" includes="statusio-saas-alert-extension.jar"/>
+  </copy>
+  <zip destfile="/Users/pedro.pacheco/Projects/statusio-saas-alert-extension-master/target/statusio-saas-alert-extension-1.0.0.zip">
+    <zipfileset filemode="755" dir="/Users/pedro.pacheco/Projects/statusio-saas-alert-extension-master/target/statusio-saas-alert-extension" prefix="StatusioSaasAlertExtension/"/>
+  </zip>
+  <delete dir="/Users/pedro.pacheco/Projects/statusio-saas-alert-extension-master/target/statusio-saas-alert-extension"/>
+  <unzip dest="/Users/pedro.pacheco/Projects/samples-apps/appdynamics-sample-app/build/MachineAgent/monitors" src="/Users/pedro.pacheco/Projects/statusio-saas-alert-extension-master/target/statusio-saas-alert-extension-1.0.0.zip"/>
+</target>
+</project>

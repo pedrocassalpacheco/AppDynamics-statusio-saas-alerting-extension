@@ -1,0 +1,23 @@
+<monitor>
+    <name>statusio-saas-alert-extension</name>
+    <type>managed</type>
+    <description>Status.io Alerting Extension For SAAS customers only.</description>
+    <monitor-configuration></monitor-configuration>
+    <monitor-run-task>
+        <execution-style>periodic</execution-style>
+        <execution-frequency-in-seconds>60</execution-frequency-in-seconds>
+        <name>Status.io SAAS Alert Extension</name>
+        <display-name>Status.io SAAS Alert Extension</display-name>
+        <description>This extension sends alerts to Status.io from SAAS controllers.</description>
+        <type>java</type>
+        <execution-timeout-in-secs>60</execution-timeout-in-secs>
+        <task-arguments>
+            <!-- config file-->
+            <argument name="config-file" is-required="true" default-value="monitors/StatusioSaasAlertExtension/config.yaml" />
+        </task-arguments>
+        <java-task>
+            <classpath>statusio-saas-alert-extension.jar</classpath>
+            <impl-class>com.appdynamics.extensions.StatusioAlertExtension</impl-class>
+        </java-task>
+    </monitor-run-task>
+</monitor>
